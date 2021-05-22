@@ -1,4 +1,4 @@
-package pe.com.mibanco.serviceManagement.chatbot.handler;
+package pe.com.mibanco.serviceManagement.chatbot.restError;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -26,6 +26,8 @@ public class IssueErrorHandler extends DefaultResponseErrorHandler {
 		log.info(body);
 		
 		if(statusCode == HttpStatus.NOT_FOUND.value()) {
+			throw new EntityNotFoundException(ChatbotHttpStatus.NOT_FOUND_ISSUE);
+		} else {
 			throw new EntityNotFoundException(ChatbotHttpStatus.NOT_FOUND_ISSUE);
 		}
 	}

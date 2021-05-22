@@ -12,26 +12,16 @@ import pe.com.mibanco.serviceManagement.chatbot.model.IncidenciaJira;
 import pe.com.mibanco.serviceManagement.chatbot.service.IncidenciaService;
 
 @RestController
-@RequestMapping(value="/incidencia")
+@RequestMapping(value = "/incidencia")
 public class IncidenciaController {
-	
+
 	@Autowired
 	private IncidenciaService incidenciaService;
-	
-	@GetMapping(value="/{key}")
+
+	@GetMapping(value = "/{key}")
 	public ResponseEntity<IncidenciaJira> obtenerIncidencia(@PathVariable String key) {
 		IncidenciaJira incidenciaJira = new IncidenciaJira();
-		
-//		try {
-			incidenciaJira = incidenciaService.obtenerIncidencia(key);
-			
-//			if(incidenciaJira == null) {
-//				
-//			}
-//		} catch (Exception e) {
-//			return new ResponseEntity<IncidenciaJira>(incidenciaJira, HttpStatus.INTERNAL_SERVER_ERROR);
-//		}
-		
+		incidenciaJira = incidenciaService.obtenerIncidencia(key);
 		return new ResponseEntity<IncidenciaJira>(incidenciaJira, HttpStatus.OK);
 	}
 
