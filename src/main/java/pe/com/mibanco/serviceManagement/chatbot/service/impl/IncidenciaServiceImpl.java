@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import pe.com.mibanco.serviceManagement.chatbot.dao.IncidenciaDao;
-import pe.com.mibanco.serviceManagement.chatbot.model.IncidenciaJira;
+import pe.com.mibanco.serviceManagement.chatbot.dto.IncidenciaJira;
 import pe.com.mibanco.serviceManagement.chatbot.service.IncidenciaService;
 
 @Service

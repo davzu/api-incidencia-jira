@@ -1,6 +1,6 @@
 package pe.com.mibanco.serviceManagement.chatbot.service;
 
-import pe.com.mibanco.serviceManagement.chatbot.model.IncidenciaJira;
+import pe.com.mibanco.serviceManagement.chatbot.dto.IncidenciaJira;
 
 public interface IncidenciaService {
 	

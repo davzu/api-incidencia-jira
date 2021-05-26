@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -16,18 +17,21 @@ import pe.com.mibanco.serviceManagement.chatbot.constantes.ChatbotHttpStatus;
 import pe.com.mibanco.serviceManagement.chatbot.dao.UsuarioDao;
 import pe.com.mibanco.serviceManagement.chatbot.model.UsuarioJira;
 import pe.com.mibanco.serviceManagement.chatbot.restError.IssueErrorHandler;
-import pe.com.mibanco.serviceManagement.chatbot.util.HttpUtil;
+import pe.com.mibanco.serviceManagement.chatbot.util.ConexionJira;
 
 @Repository
 public class UsuarioDaoImpl implements UsuarioDao {
-
+	
+	@Autowired
+	private ConexionJira conexionJira;
+	
 	@Override
 	public UsuarioJira obtenerUsuarioPorEmail(String email) {
-		String url = "https://davzu.atlassian.net/rest/api/3/user/search?query={email}";
+		String url = conexionJira.getJiraApiUrlBase() + "/user/search?query={email}";
 		Map<String, String> varsPath = new HashMap<>();
 		varsPath.put("email", email);
 
-		HttpEntity<String> request = new HttpEntity<>(HttpUtil.getHttpHeaders());
+		HttpEntity<String> request = new HttpEntity<>(conexionJira.getHttpHeaders());
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.setErrorHandler(new IssueErrorHandler());
 		ResponseEntity<List<UsuarioJira>> response = 
