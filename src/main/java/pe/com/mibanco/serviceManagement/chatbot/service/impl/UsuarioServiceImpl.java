@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import pe.com.mibanco.serviceManagement.chatbot.apierror.EntityNotFoundException;
 import pe.com.mibanco.serviceManagement.chatbot.constantes.ChatbotHttpStatus;
 import pe.com.mibanco.serviceManagement.chatbot.dao.UsuarioDao;
-import pe.com.mibanco.serviceManagement.chatbot.model.UsuarioJira;
+import pe.com.mibanco.serviceManagement.chatbot.model.jira.UsuarioJira;
 import pe.com.mibanco.serviceManagement.chatbot.service.UsuarioService;
 
 @Service

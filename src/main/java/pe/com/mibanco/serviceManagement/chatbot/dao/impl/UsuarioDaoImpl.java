@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 import pe.com.mibanco.serviceManagement.chatbot.apierror.EntityNotFoundException;
 import pe.com.mibanco.serviceManagement.chatbot.constantes.ChatbotHttpStatus;
 import pe.com.mibanco.serviceManagement.chatbot.dao.UsuarioDao;
-import pe.com.mibanco.serviceManagement.chatbot.model.UsuarioJira;
+import pe.com.mibanco.serviceManagement.chatbot.model.jira.UsuarioJira;
 import pe.com.mibanco.serviceManagement.chatbot.restError.IssueErrorHandler;
 import pe.com.mibanco.serviceManagement.chatbot.util.ConexionJira;
 

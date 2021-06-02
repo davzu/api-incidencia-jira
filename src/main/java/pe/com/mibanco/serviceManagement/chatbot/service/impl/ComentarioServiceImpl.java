@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import pe.com.mibanco.serviceManagement.chatbot.dao.ComentarioDao;
-import pe.com.mibanco.serviceManagement.chatbot.dto.ComentarioJira;
+import pe.com.mibanco.serviceManagement.chatbot.model.jira.ComentarioJira;
 import pe.com.mibanco.serviceManagement.chatbot.service.ComentarioService;
 
 @Service

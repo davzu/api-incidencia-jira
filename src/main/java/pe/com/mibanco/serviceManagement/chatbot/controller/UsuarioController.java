@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import pe.com.mibanco.serviceManagement.chatbot.bean.ChatbotResponse;
 import pe.com.mibanco.serviceManagement.chatbot.constantes.ChatbotHttpStatus;
-import pe.com.mibanco.serviceManagement.chatbot.model.UsuarioJira;
+import pe.com.mibanco.serviceManagement.chatbot.model.jira.UsuarioJira;
 import pe.com.mibanco.serviceManagement.chatbot.service.UsuarioService;
 
 @RestController
