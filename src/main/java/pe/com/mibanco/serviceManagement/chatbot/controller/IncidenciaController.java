@@ -35,6 +35,16 @@ public class IncidenciaController {
 		return new ResponseEntity<IncidenciaJira>(incidenciaJira, HttpStatus.OK);
 	}
 	
+	@GetMapping(value = "/validar/{key}")
+	public ResponseEntity<ChatbotResponse> validarExistenciaIncidencia(@PathVariable String key) {
+		IncidenciaJira incidenciaJira = incidenciaService.obtenerIncidencia(key);
+		ChatbotResponse chatbotResponse = new ChatbotResponse(ChatbotHttpStatus.FOUND_ISSUE.getStatusCode(), 
+																ChatbotHttpStatus.FOUND_ISSUE.getReason(), 
+																incidenciaJira);
+
+		return new ResponseEntity<ChatbotResponse>(chatbotResponse, HttpStatus.OK);
+	}
+	
 	@GetMapping(value = "/list")
 	public ResponseEntity<ChatbotResponse> obtenerIncidencias(@RequestParam String correoUsuario) {
 		List<IncidenciaJira> incidencias = incidenciaService.obtenerIncidenciasPorUsuario(correoUsuario);

@@ -4,7 +4,5 @@ public class Constantes {
 	
 	public static final String FIELD_ISSUE_STATUS = "status";
 	public static final String FIELD_ISSUE_RESPONSIBLE = "assignee";
-	
-	public static final String JIRA_PROJECT_NAME = "SBM";
 
 }

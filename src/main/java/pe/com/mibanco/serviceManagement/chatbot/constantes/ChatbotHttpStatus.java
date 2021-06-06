@@ -5,11 +5,13 @@ public enum ChatbotHttpStatus {
 	NOT_FOUND_USER(4001, "No se encontró el usuario"),
 	NOT_FOUND_ISSUE(4002, "No se encontró incidencia"),
 	
+	API_CONNECTION_OK(2000, "Sí hay conexión con la API"),
 	FOUND_USER(2001, "Usuario encontrado"),
 	FOUND_ISSUES(2002),
 	FOUND_LAST_COMMENT(2003),
 	FOUND_RESPONSIBLE(2004),
-	STATUS_TICKET(2005);
+	STATUS_TICKET(2005),
+	FOUND_ISSUE(2006, "Se encontró incidencia");
 	
 
 	private final int statusCode;

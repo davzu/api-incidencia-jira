@@ -17,8 +17,12 @@ public class ChatbotResponse {
 	@JsonIgnore
 	private Object data;
 	
+	public ChatbotResponse(int code, String message) {
+		this.code = code;
+		this.message = message;
+	}
+	
 	public ChatbotResponse(int code, String message, Object data) {
-		super();
 		this.code = code;
 		this.message = message;
 		this.data = data;

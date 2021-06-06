@@ -17,6 +17,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
 
+import pe.com.mibanco.serviceManagement.chatbot.constantes.ApiData;
 import pe.com.mibanco.serviceManagement.chatbot.constantes.Constantes;
 import pe.com.mibanco.serviceManagement.chatbot.dao.IncidenciaDao;
 import pe.com.mibanco.serviceManagement.chatbot.model.jira.IncidenciaJira;
@@ -28,6 +29,8 @@ public class IncidenciaDaoImpl implements IncidenciaDao {
 	
 	@Autowired
 	private ConexionJira conexionJira;
+	@Autowired
+	private ApiData apiData;
 	
 	@Override
 	public IncidenciaJira obtenerIncidencia(String key) {
@@ -72,7 +75,7 @@ public class IncidenciaDaoImpl implements IncidenciaDao {
 				+ "order by created DESC"
 				+ "&fields=null";
 		Map<String, String> varsPath = new HashMap<>();
-		varsPath.put("projectId", Constantes.JIRA_PROJECT_NAME);
+		varsPath.put("projectId", apiData.getJiraProjectId());
 		varsPath.put("creatorEmail", usuario);
 		
 		HttpEntity<String> request = new HttpEntity<>(conexionJira.getHttpHeaders());
